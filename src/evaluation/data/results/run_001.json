@@ -1,0 +1,604 @@
+{
+  "total_samples": 13,
+  "failed_samples": 1,
+  "aggregate": {
+    "entity_recall": 0.7307692307692307,
+    "clinical_code_accuracy": 0.6923076923076923,
+    "refusal_flag": 0.0
+  },
+  "by_category": {
+    "multi_hop": {
+      "entity_recall": 0.0,
+      "clinical_code_accuracy": 0.0,
+      "refusal_flag": 0.0
+    },
+    "population_query": {
+      "entity_recall": 0.7916666666666666,
+      "clinical_code_accuracy": 0.75,
+      "refusal_flag": 0.0
+    }
+  },
+  "by_difficulty": {
+    "hard": {
+      "entity_recall": 0.5,
+      "clinical_code_accuracy": 0.0,
+      "refusal_flag": 0.0
+    },
+    "medium": {
+      "entity_recall": 0.6428571428571429,
+      "clinical_code_accuracy": 0.8571428571428571,
+      "refusal_flag": 0.0
+    },
+    "easy": {
+      "entity_recall": 1.0,
+      "clinical_code_accuracy": 0.75,
+      "refusal_flag": 0.0
+    }
+  },
+  "samples": [
+    {
+      "id": "eval_001",
+      "category": "population_query",
+      "difficulty": "easy",
+      "question": "How many patients are currently in the VClinic database?",
+      "answer": "There are currently 117 patients in the VClinic database.",
+      "contexts": [
+        "[\n  {\n    \"numberOfPatients\": 117\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 57
+          }
+        }
+      },
+      "latency_s": 5.031,
+      "error": null
+    },
+    {
+      "id": "eval_002",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "What are the five most frequently diagnosed conditions across all patients in the database?",
+      "answer": "The five most frequently diagnosed conditions across all patients in the database are:\n\n1. Condition Code 314529007, diagnosed 723 times.\n2. Condition Code 73595000, diagnosed 308 times.\n3. Condition Code 66383009, diagnosed 291 times.\n4. Condition Code 160903007, diagnosed 278 times.\n5. Condition Code 160904001, diagnosed 164 times.\n\nIf you need further details about these conditions, please let me know!",
+      "contexts": [
+        "[\n  {\n    \"ConditionCode\": \"314529007\",\n    \"Frequency\": 723\n  },\n  {\n    \"ConditionCode\": \"73595000\",\n    \"Frequency\": 308\n  },\n  {\n    \"ConditionCode\": \"66383009\",\n    \"Frequency\": 291\n  },\n  {\n    \"ConditionCode\": \"160903007\",\n    \"Frequency\": 278\n  },\n  {\n    \"ConditionCode\": \"160904001\",\n    \"Frequency\": 164\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "Hypertension",
+              "Prediabetes",
+              "Diabetes",
+              "Metabolic Syndrome"
+            ],
+            "found": [],
+            "missing": [
+              "Hypertension",
+              "Prediabetes",
+              "Diabetes",
+              "Metabolic Syndrome"
+            ],
+            "total": 4
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 408
+          }
+        }
+      },
+      "latency_s": 3.56,
+      "error": null
+    },
+    {
+      "id": "eval_003",
+      "category": "population_query",
+      "difficulty": "easy",
+      "question": "Which patients have been diagnosed with type 2 diabetes?",
+      "answer": "Here are the patients who have been diagnosed with conditions related to type 2 diabetes mellitus:\n\n1. **Broderick767 Abshire638**\n   - Gender: Male\n   - Birthdate: 1946-07-01\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 1969-02-10\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 1973-04-02\n\n2. **Emerald468 Botsford977**\n   - Gender: Female\n   - Birthdate: 1948-10-08\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2000-07-07\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2012-08-03\n\n3. **Caren429 Muller251**\n   - Gender: Female\n   - Birthdate: 1948-10-08\n   - Condition: Neuropathy due to type 2 diabetes mellitus, diagnosed on 2007-11-30\n\n4. **Mina319 D'Amore443**\n   - Gender: Female\n   - Birthdate: 1964-11-15\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2009-10-18\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-01-04\n\n5. **Francie486 Goodwin327**\n   - Gender: Female\n   - Birthdate: 1979-05-24\n   - Condition: Neuropathy due to type 2 diabetes mellitus, diagnosed on 2010-08-05\n\n6. **Theda286 Herzog843**\n   - Gender: Female\n   - Birthdate: 1967-07-11\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2012-08-14\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-01-06\n\n7. **Lazaro919 Lang846**\n   - Gender: Male\n   - Birthdate: 1960-10-19\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2013-05-01\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2013-08-07\n\n8. **Burt293 Pfannerstill264**\n   - Gender: Male\n   - Birthdate: 1964-04-03\n   - Conditions:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2013-11-15\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-06-12\n\n9. **Onita767 Schmitt836**\n   - Gender: Female\n   - Birthdate: 1964-02-22\n   - Condition: Neuropathy due to type 2 diabetes mellitus, diagnosed on 2015-08-29\n\n10. **Connie24 McLaughlin530**\n    - Gender: Female\n    - Birthdate: 1970-09-03\n    - Conditions:\n      - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2020-12-17\n      - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2025-02-27\n\n11. **Norman647 Rath779**\n    - Gender: Male\n    - Birthdate: 1987-01-23\n    - Conditions:\n      - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2021-01-29\n      - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2026-01-02\n\n12. **Damon455 Hane680**\n    - Gender: Male\n    - Birthdate: 1963-10-25\n    - Condition: Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2023-05-05\n\n13. **Hyman89 Runolfsson901**\n    - Gender: Male\n    - Birthdate: 1967-09-13\n    - Condition: Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2025-01-22\n\nThese patients have been diagnosed with various complications related to type 2 diabetes mellitus, such as microalbuminuria, proteinuria, and neuropathy.",
+      "contexts": [
+        "[\n  {\n    \"patient_id\": \"656c6f5a-09f4-2a8f-0d8c-5f156ae21d89\",\n    \"name\": \"Broderick767 Abshire638\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1946-07-01\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"1969-02-10\"\n  },\n  {\n    \"patient_id\": \"656c6f5a-09f4-2a8f-0d8c-5f156ae21d89\",\n    \"name\": \"Broderick767 Abshire638\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1946-07-01\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"1973-04-02\"\n  },\n  {\n    \"patient_id\": \"95f186d2-2d83-20c7-df20-0ce6777098e1\",\n    \"name\": \"Emerald468 Botsford977\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2000-07-07\"\n  },\n  {\n    \"patient_id\": \"e4cc544e-a459-1865-2a91-e398873736de\",\n    \"name\": \"Caren429 Muller251\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2007-11-30\"\n  },\n  {\n    \"patient_id\": \"72d6300f-f083-65a0-509d-f6412fa2b529\",\n    \"name\": \"Mina319 D'Amore443\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-11-15\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2009-10-18\"\n  },\n  {\n    \"patient_id\": \"d3e437cf-2a56-a977-43be-40ac7166bf81\",\n    \"name\": \"Francie486 Goodwin327\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1979-05-24\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2010-08-05\"\n  },\n  {\n    \"patient_id\": \"95f186d2-2d83-20c7-df20-0ce6777098e1\",\n    \"name\": \"Emerald468 Botsford977\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2012-08-03\"\n  },\n  {\n    \"patient_id\": \"c058f52a-5027-02ad-47e3-5b91629392c5\",\n    \"name\": \"Theda286 Herzog843\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1967-07-11\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2012-08-14\"\n  },\n  {\n    \"patient_id\": \"f83e1932-8b83-fbb8-0a59-880097724afc\",\n    \"name\": \"Lazaro919 Lang846\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1960-10-19\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-05-01\"\n  },\n  {\n    \"patient_id\": \"f83e1932-8b83-fbb8-0a59-880097724afc\",\n    \"name\": \"Lazaro919 Lang846\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1960-10-19\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-08-07\"\n  },\n  {\n    \"patient_id\": \"6f757a1d-4e64-09d6-e6b5-873c144bcfc8\",\n    \"name\": \"Burt293 Pfannerstill264\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-11-15\"\n  },\n  {\n    \"patient_id\": \"72d6300f-f083-65a0-509d-f6412fa2b529\",\n    \"name\": \"Mina319 D'Amore443\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-11-15\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-01-04\"\n  },\n  {\n    \"patient_id\": \"c058f52a-5027-02ad-47e3-5b91629392c5\",\n    \"name\": \"Theda286 Herzog843\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1967-07-11\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-01-06\"\n  },\n  {\n    \"patient_id\": \"6f757a1d-4e64-09d6-e6b5-873c144bcfc8\",\n    \"name\": \"Burt293 Pfannerstill264\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-06-12\"\n  },\n  {\n    \"patient_id\": \"8215f796-234c-826d-5b82-b88af72b46d5\",\n    \"name\": \"Onita767 Schmitt836\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-02-22\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-08-29\"\n  },\n  {\n    \"patient_id\": \"f5aa9764-32d7-0c46-ffdc-77dc0c071105\",\n    \"name\": \"Connie24 McLaughlin530\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1970-09-03\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2020-12-17\"\n  },\n  {\n    \"patient_id\": \"e820afe7-c1d1-f9ec-1707-465338584a66\",\n    \"name\": \"Norman647 Rath779\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1987-01-23\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2021-01-29\"\n  },\n  {\n    \"patient_id\": \"196ea088-0636-fde7-e378-97da37fb7832\",\n    \"name\": \"Damon455 Hane680\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1963-10-25\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2023-05-05\"\n  },\n  {\n    \"patient_id\": \"f81214e7-f460-a0dc-8d4a-ba69f1add6e4\",\n    \"name\": \"Hyman89 Runolfsson901\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1967-09-13\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2025-01-22\"\n  },\n  {\n    \"patient_id\": \"f5aa9764-32d7-0c46-ffdc-77dc0c071105\",\n    \"name\": \"Connie24 McLaughlin530\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1970-09-03\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2025-02-27\"\n  },\n  {\n    \"patient_id\": \"e820afe7-c1d1-f9ec-1707-465338584a66\",\n    \"name\": \"Norman647 Rath779\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1987-01-23\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2026-01-02\"\n  }\n]"
+      ],
+      "tool_names": [
+        "get_patients_with_condition"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "44054006"
+            ],
+            "found": [],
+            "missing": [
+              "44054006"
+            ],
+            "total": 1
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 3068
+          }
+        }
+      },
+      "latency_s": 9.036,
+      "error": null
+    },
+    {
+      "id": "eval_004",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "What medications are most commonly prescribed to patients who have hypertension?",
+      "answer": "The most commonly prescribed medications for patients with hypertension are:\n\n1. **amLODIPine 2.5 MG Oral Tablet** (RxNorm Code: 308136) - prescribed to 376 patients.\n2. **Hydrochlorothiazide 25 MG Oral Tablet** (RxNorm Code: 310798) - prescribed to 243 patients.\n3. **lisinopril 10 MG Oral Tablet** (RxNorm Code: 314076) - prescribed to 239 patients.",
+      "contexts": [
+        "[\n  {\n    \"medication\": \"amLODIPine 2.5 MG Oral Tablet\",\n    \"code\": \"308136\",\n    \"patient_count\": 376\n  },\n  {\n    \"medication\": \"Hydrochlorothiazide 25 MG Oral Tablet\",\n    \"code\": \"310798\",\n    \"patient_count\": 243\n  },\n  {\n    \"medication\": \"lisinopril 10 MG Oral Tablet\",\n    \"code\": \"314076\",\n    \"patient_count\": 239\n  }\n]"
+      ],
+      "tool_names": [
+        "get_medications_for_condition"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "expected": [
+              "Lisinopril",
+              "Amlodipine",
+              "Hydrochlorothiazide"
+            ],
+            "found": [
+              "Lisinopril",
+              "Amlodipine",
+              "Hydrochlorothiazide"
+            ],
+            "missing": [],
+            "total": 3
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 351
+          }
+        }
+      },
+      "latency_s": 2.764,
+      "error": null
+    },
+    {
+      "id": "eval_005",
+      "category": "population_query",
+      "difficulty": "easy",
+      "question": "How many patients have a penicillin allergy recorded in the system?",
+      "answer": "There are no patients with a penicillin allergy recorded in the system.",
+      "contexts": [
+        "[\n  {\n    \"numberOfPatients\": 0\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "expected": [
+              "penicillin"
+            ],
+            "found": [
+              "penicillin"
+            ],
+            "missing": [],
+            "total": 1
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 71
+          }
+        }
+      },
+      "latency_s": 3.072,
+      "error": null
+    },
+    {
+      "id": "eval_006",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "Which provider has treated the greatest number of patients and what is their specialty?",
+      "answer": "The provider who has treated the greatest number of patients is a General Practice specialist with a total of 29 patients.",
+      "contexts": [
+        "[\n  {\n    \"ProviderID\": \"f94bad87-d775-34ae-a123-4f9a3bc47b44\",\n    \"Specialty\": \"GENERAL PRACTICE\",\n    \"PatientCount\": 29\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 122
+          }
+        }
+      },
+      "latency_s": 2.868,
+      "error": null
+    },
+    {
+      "id": "eval_007",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "What is the most commonly performed procedure across all patients in the database?",
+      "answer": "The most commonly performed procedure across all patients in the database is coded as \"265764009,\" with a total of 2,352 occurrences.",
+      "contexts": [
+        "[\n  {\n    \"proc.code\": \"265764009\",\n    \"procedure_count\": 2352\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 133
+          }
+        }
+      },
+      "latency_s": 3.073,
+      "error": null
+    },
+    {
+      "id": "eval_008",
+      "category": "population_query",
+      "difficulty": "hard",
+      "question": "List all patients who have been diagnosed with both type 2 diabetes and hypertension.",
+      "answer": "The following patients have been diagnosed with both type 2 diabetes and hypertension:\n\n1. **Broderick767 Abshire638**\n   - Gender: Male\n   - Birthdate: 1946-07-01\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 1969-02-10\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 1973-04-02\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 1968-01-29\n\n2. **Emerald468 Botsford977**\n   - Gender: Female\n   - Birthdate: 1948-10-08\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2000-07-07\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2012-08-03\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 1992-10-23\n\n3. **Mina319 D'Amore443**\n   - Gender: Female\n   - Birthdate: 1964-11-15\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2009-10-18\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-01-04\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 2008-11-30\n\n4. **Theda286 Herzog843**\n   - Gender: Female\n   - Birthdate: 1967-07-11\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2012-08-14\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-01-06\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 1995-09-19\n\n5. **Lazaro919 Lang846**\n   - Gender: Male\n   - Birthdate: 1960-10-19\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2013-05-01\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2013-08-07\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 2004-03-03\n\n6. **Burt293 Pfannerstill264**\n   - Gender: Male\n   - Birthdate: 1964-04-03\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2013-11-15\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2015-06-12\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 2004-04-09\n\n7. **Onita767 Schmitt836**\n   - Gender: Female\n   - Birthdate: 1964-02-22\n   - Type 2 Diabetes Diagnosis:\n     - Neuropathy due to type 2 diabetes mellitus, diagnosed on 2015-08-29\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 1995-05-06\n\n8. **Francie486 Goodwin327**\n   - Gender: Female\n   - Birthdate: 1979-05-24\n   - Type 2 Diabetes Diagnosis:\n     - Neuropathy due to type 2 diabetes mellitus, diagnosed on 2010-08-05\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 2010-08-05\n\n9. **Norman647 Rath779**\n   - Gender: Male\n   - Birthdate: 1987-01-23\n   - Type 2 Diabetes Diagnoses:\n     - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2021-01-29\n     - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2026-01-02\n   - Hypertension Diagnosis:\n     - Essential hypertension, diagnosed on 2015-04-03\n\n10. **Damon455 Hane680**\n    - Gender: Male\n    - Birthdate: 1963-10-25\n    - Type 2 Diabetes Diagnosis:\n      - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2023-05-05\n    - Hypertension Diagnosis:\n      - Essential hypertension, diagnosed on 2018-11-23\n\n11. **Hyman89 Runolfsson901**\n    - Gender: Male\n    - Birthdate: 1967-09-13\n    - Type 2 Diabetes Diagnosis:\n      - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2025-01-22\n    - Hypertension Diagnosis:\n      - Essential hypertension, diagnosed on 2001-11-28\n\n12. **Connie24 McLaughlin530**\n    - Gender: Female\n    - Birthdate: 1970-09-03\n    - Type 2 Diabetes Diagnoses:\n      - Microalbuminuria due to type 2 diabetes mellitus, diagnosed on 2020-12-17\n      - Proteinuria due to type 2 diabetes mellitus, diagnosed on 2025-02-27",
+      "contexts": [
+        "[\n  {\n    \"patient_id\": \"656c6f5a-09f4-2a8f-0d8c-5f156ae21d89\",\n    \"name\": \"Broderick767 Abshire638\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1946-07-01\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"1969-02-10\"\n  },\n  {\n    \"patient_id\": \"656c6f5a-09f4-2a8f-0d8c-5f156ae21d89\",\n    \"name\": \"Broderick767 Abshire638\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1946-07-01\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"1973-04-02\"\n  },\n  {\n    \"patient_id\": \"95f186d2-2d83-20c7-df20-0ce6777098e1\",\n    \"name\": \"Emerald468 Botsford977\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2000-07-07\"\n  },\n  {\n    \"patient_id\": \"e4cc544e-a459-1865-2a91-e398873736de\",\n    \"name\": \"Caren429 Muller251\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2007-11-30\"\n  },\n  {\n    \"patient_id\": \"72d6300f-f083-65a0-509d-f6412fa2b529\",\n    \"name\": \"Mina319 D'Amore443\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-11-15\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2009-10-18\"\n  },\n  {\n    \"patient_id\": \"d3e437cf-2a56-a977-43be-40ac7166bf81\",\n    \"name\": \"Francie486 Goodwin327\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1979-05-24\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2010-08-05\"\n  },\n  {\n    \"patient_id\": \"95f186d2-2d83-20c7-df20-0ce6777098e1\",\n    \"name\": \"Emerald468 Botsford977\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2012-08-03\"\n  },\n  {\n    \"patient_id\": \"c058f52a-5027-02ad-47e3-5b91629392c5\",\n    \"name\": \"Theda286 Herzog843\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1967-07-11\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2012-08-14\"\n  },\n  {\n    \"patient_id\": \"f83e1932-8b83-fbb8-0a59-880097724afc\",\n    \"name\": \"Lazaro919 Lang846\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1960-10-19\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-05-01\"\n  },\n  {\n    \"patient_id\": \"f83e1932-8b83-fbb8-0a59-880097724afc\",\n    \"name\": \"Lazaro919 Lang846\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1960-10-19\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-08-07\"\n  },\n  {\n    \"patient_id\": \"6f757a1d-4e64-09d6-e6b5-873c144bcfc8\",\n    \"name\": \"Burt293 Pfannerstill264\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2013-11-15\"\n  },\n  {\n    \"patient_id\": \"72d6300f-f083-65a0-509d-f6412fa2b529\",\n    \"name\": \"Mina319 D'Amore443\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-11-15\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-01-04\"\n  },\n  {\n    \"patient_id\": \"c058f52a-5027-02ad-47e3-5b91629392c5\",\n    \"name\": \"Theda286 Herzog843\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1967-07-11\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-01-06\"\n  },\n  {\n    \"patient_id\": \"6f757a1d-4e64-09d6-e6b5-873c144bcfc8\",\n    \"name\": \"Burt293 Pfannerstill264\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-06-12\"\n  },\n  {\n    \"patient_id\": \"8215f796-234c-826d-5b82-b88af72b46d5\",\n    \"name\": \"Onita767 Schmitt836\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-02-22\",\n    \"condition\": \"Neuropathy due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2015-08-29\"\n  },\n  {\n    \"patient_id\": \"f5aa9764-32d7-0c46-ffdc-77dc0c071105\",\n    \"name\": \"Connie24 McLaughlin530\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1970-09-03\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2020-12-17\"\n  },\n  {\n    \"patient_id\": \"e820afe7-c1d1-f9ec-1707-465338584a66\",\n    \"name\": \"Norman647 Rath779\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1987-01-23\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2021-01-29\"\n  },\n  {\n    \"patient_id\": \"196ea088-0636-fde7-e378-97da37fb7832\",\n    \"name\": \"Damon455 Hane680\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1963-10-25\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2023-05-05\"\n  },\n  {\n    \"patient_id\": \"f81214e7-f460-a0dc-8d4a-ba69f1add6e4\",\n    \"name\": \"Hyman89 Runolfsson901\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1967-09-13\",\n    \"condition\": \"Microalbuminuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2025-01-22\"\n  },\n  {\n    \"patient_id\": \"f5aa9764-32d7-0c46-ffdc-77dc0c071105\",\n    \"name\": \"Connie24 McLaughlin530\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1970-09-03\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2025-02-27\"\n  },\n  {\n    \"patient_id\": \"e820afe7-c1d1-f9ec-1707-465338584a66\",\n    \"name\": \"Norman647 Rath779\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1987-01-23\",\n    \"condition\": \"Proteinuria due to type 2 diabetes mellitus (disorder)\",\n    \"diagnosed\": \"2026-01-02\"\n  }\n]",
+        "[\n  {\n    \"patient_id\": \"e1e3559f-f12d-0295-bfeb-c1ab19c08e49\",\n    \"name\": \"Sung603 Wintheiser220\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1930-01-18\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"1958-03-29\"\n  },\n  {\n    \"patient_id\": \"656c6f5a-09f4-2a8f-0d8c-5f156ae21d89\",\n    \"name\": \"Broderick767 Abshire638\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1946-07-01\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"1968-01-29\"\n  },\n  {\n    \"patient_id\": \"95f186d2-2d83-20c7-df20-0ce6777098e1\",\n    \"name\": \"Emerald468 Botsford977\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"1992-10-23\"\n  },\n  {\n    \"patient_id\": \"8215f796-234c-826d-5b82-b88af72b46d5\",\n    \"name\": \"Onita767 Schmitt836\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-02-22\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"1995-05-06\"\n  },\n  {\n    \"patient_id\": \"c058f52a-5027-02ad-47e3-5b91629392c5\",\n    \"name\": \"Theda286 Herzog843\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1967-07-11\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"1995-09-19\"\n  },\n  {\n    \"patient_id\": \"f81214e7-f460-a0dc-8d4a-ba69f1add6e4\",\n    \"name\": \"Hyman89 Runolfsson901\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1967-09-13\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2001-11-28\"\n  },\n  {\n    \"patient_id\": \"73f87c1e-a388-1310-bcae-8a2e3ce99d03\",\n    \"name\": \"Soledad678 White193\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1950-05-01\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2002-10-14\"\n  },\n  {\n    \"patient_id\": \"f83e1932-8b83-fbb8-0a59-880097724afc\",\n    \"name\": \"Lazaro919 Lang846\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1960-10-19\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2004-03-03\"\n  },\n  {\n    \"patient_id\": \"6f757a1d-4e64-09d6-e6b5-873c144bcfc8\",\n    \"name\": \"Burt293 Pfannerstill264\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2004-04-09\"\n  },\n  {\n    \"patient_id\": \"bedb8b32-cb71-5695-41da-b36c843fc31b\",\n    \"name\": \"Huey641 Connelly992\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1966-11-17\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2006-11-23\"\n  },\n  {\n    \"patient_id\": \"e4cc544e-a459-1865-2a91-e398873736de\",\n    \"name\": \"Caren429 Muller251\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1948-10-08\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2006-11-24\"\n  },\n  {\n    \"patient_id\": \"0a42ee5e-12a8-b004-5b5c-1cef952f0824\",\n    \"name\": \"Jewel43 Mayer370\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1964-04-03\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2008-04-18\"\n  },\n  {\n    \"patient_id\": \"ee36d4c6-8d53-761a-acc1-c3d12343d8f6\",\n    \"name\": \"Rudy520 Padberg411\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1968-04-27\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2008-05-03\"\n  },\n  {\n    \"patient_id\": \"ff2c3829-d4a3-a67d-19ce-c84d8eb76a9b\",\n    \"name\": \"Felipe97 Crona259\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1974-06-03\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2008-08-18\"\n  },\n  {\n    \"patient_id\": \"72d6300f-f083-65a0-509d-f6412fa2b529\",\n    \"name\": \"Mina319 D'Amore443\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1964-11-15\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2008-11-30\"\n  },\n  {\n    \"patient_id\": \"e4882106-55a4-13ed-ab90-360b8f522e51\",\n    \"name\": \"Renay451 Runolfsson901\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1950-05-01\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2010-06-28\"\n  },\n  {\n    \"patient_id\": \"d3e437cf-2a56-a977-43be-40ac7166bf81\",\n    \"name\": \"Francie486 Goodwin327\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1979-05-24\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2010-08-05\"\n  },\n  {\n    \"patient_id\": \"4457c89c-bc8a-ead1-95a0-f9ccd1ca32e3\",\n    \"name\": \"Cameron381 Bailey598\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1973-06-25\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2013-07-01\"\n  },\n  {\n    \"patient_id\": \"e820afe7-c1d1-f9ec-1707-465338584a66\",\n    \"name\": \"Norman647 Rath779\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1987-01-23\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2015-04-03\"\n  },\n  {\n    \"patient_id\": \"8b1b2cf1-0831-fb32-da5d-c65be9ef86da\",\n    \"name\": \"Gabriel934 Paucek755\",\n    \"gender\": \"F\",\n    \"birthdate\": \"1965-09-16\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2015-09-17\"\n  },\n  {\n    \"patient_id\": \"b9fbe0a0-c38a-9226-d3e8-d8d004db4164\",\n    \"name\": \"Luis923 Senger904\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1965-10-02\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2015-11-14\"\n  },\n  {\n    \"patient_id\": \"66aa37ae-c3ca-1a9f-6a0a-9677319410cd\",\n    \"name\": \"Columbus656 Bartell116\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1986-02-24\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2017-05-08\"\n  },\n  {\n    \"patient_id\": \"93aa0d97-2e1d-d070-5d55-34bb18f9d25d\",\n    \"name\": \"Federico589 Quitzon246\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1947-03-13\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2018-07-12\"\n  },\n  {\n    \"patient_id\": \"196ea088-0636-fde7-e378-97da37fb7832\",\n    \"name\": \"Damon455 Hane680\",\n    \"gender\": \"M\",\n    \"birthdate\": \"1963-10-25\",\n    \"condition\": \"Essential hypertension (disorder)\",\n    \"diagnosed\": \"2018-11-23\"\n  }\n]"
+      ],
+      "tool_names": [
+        "get_patients_with_condition",
+        "get_patients_with_condition"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "44054006",
+              "59621000"
+            ],
+            "found": [],
+            "missing": [
+              "44054006",
+              "59621000"
+            ],
+            "total": 2
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 3879
+          }
+        }
+      },
+      "latency_s": 10.363,
+      "error": null
+    },
+    {
+      "id": "eval_009",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "What organizations are in the VClinic system and how many patients does each one serve?",
+      "answer": "Here are some of the organizations in the VClinic system along with the number of patients each one serves:\n\n1. Organization ID: 74ab949d-17ac-3309-83a0-13b4405c66aa - Number of Patients: 29\n2. Organization ID: bccd7d67-203c-3d93-b6b0-bff5a146cd1d - Number of Patients: 5\n3. Organization ID: ab701a70-a658-340e-8f69-ee196a7d40c6 - Number of Patients: 5\n4. Organization ID: 217cb6f6-e822-3831-9d9d-ffa104971042 - Number of Patients: 4\n5. Organization ID: 7b20d1c4-c56b-3647-801c-5e4e13679073 - Number of Patients: 4\n\nThere are many more organizations, each serving between 1 to 4 patients. If you need details on a specific organization, please let me know!",
+      "contexts": [
+        "[\n  {\n    \"Organization\": \"74ab949d-17ac-3309-83a0-13b4405c66aa\",\n    \"NumberOfPatients\": 29\n  },\n  {\n    \"Organization\": \"bccd7d67-203c-3d93-b6b0-bff5a146cd1d\",\n    \"NumberOfPatients\": 5\n  },\n  {\n    \"Organization\": \"ab701a70-a658-340e-8f69-ee196a7d40c6\",\n    \"NumberOfPatients\": 5\n  },\n  {\n    \"Organization\": \"217cb6f6-e822-3831-9d9d-ffa104971042\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"7b20d1c4-c56b-3647-801c-5e4e13679073\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"1853aeef-5897-326a-80d6-aa4b0459eb6d\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"440fa4b8-c731-3cf5-81d9-aa3f30a37b95\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"cbebae9e-f95e-3d2c-9712-289ea8d6aeec\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"79508e39-d0b0-3613-9d54-168f6e1c3a18\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"2fb77691-5353-358a-bc94-90af77dd654b\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"b9e35b8a-9831-32d8-a6dc-d7a546c126b0\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"c0a33465-d309-3d2a-932e-9d554a7cc19c\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"3ff0f58b-7a1f-3334-9449-ff15f68b7d86\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"aad05540-c9cb-3805-b3c4-f9b9d9b42b2e\",\n    \"NumberOfPatients\": 4\n  },\n  {\n    \"Organization\": \"1e11392b-1278-3e70-93cd-f396cbd0c265\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"aade280a-3b90-3e48-9648-91109a964a63\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"e2a8b444-9b8f-36ff-84c4-05ee98589482\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"82c72223-f521-3a34-9b9b-4ff366365399\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"ecd3b321-0a8a-3ce6-81f0-982dd77fce43\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"a14e698d-a9ba-3eae-9c8b-682ec726433d\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"845fbd9b-2d1c-39a8-8261-28ae40e4fab2\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"a2d45ee8-b930-3169-b612-f602961ad212\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"13161e5b-02d2-3d19-8b48-26ef0becfc83\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"5ba6765a-f335-36b0-9c6a-6bb494c5330d\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"a06b1a97-d6ce-3ea1-ba4a-2ef85a8114ab\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"666c3e81-2ec6-3bff-9dcc-a704edd86960\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"f8918a95-31e8-3ac4-8d12-29ca6080ebda\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"83579123-f29c-39b8-9f5f-8f79e91683c7\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"ad2dab07-4f85-3950-baaa-7c7cd2aa770c\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"1cec4304-9757-3a10-ad4f-7e2090c56131\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"9d0e702d-50a0-3f4c-9126-0951d560fd4b\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"e69e7cbb-8362-30d1-83f2-3a0c492fe2b1\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"0fab3c4e-a028-39a6-b15a-be5a88b6aa2a\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"3695125c-c052-3ece-898a-2a6448987ae5\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"0592d4e5-a0fb-3143-83cd-8e5a6b066a96\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"e1818b21-4458-3b9c-b2b8-7ed6f57ae078\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"497f39dd-280e-3d58-af5b-c5e3a3a09b10\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"2836d9ac-c6a6-39d1-8f13-fdf0fc8928f4\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"a25107f7-f4f5-36fc-98e4-f3e1b5875c91\",\n    \"NumberOfPatients\": 3\n  },\n  {\n    \"Organization\": \"9a20d707-68e4-32c0-b2b2-2f5d5c2012cd\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"fa564970-fde4-332c-91d9-c0747b032d3e\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"b6eeaaf7-1683-3bcb-b6ee-81ce304636ef\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"06cc2462-430f-3322-9c87-7e971125f510\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"4f5e8f16-a31b-3071-8556-d7188ede313d\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a4b91172-69e7-3895-bd89-b9a0868de5c2\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a8f1424c-00bc-3403-8db5-cd600978f3a4\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"38508743-50d1-3429-8fe2-37e42ddaf20e\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a5577e5c-b886-37a0-8eee-8ff6feb7ea6b\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"0caa0116-ef9a-3d4c-bcff-9c405a9d2bda\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"b6717471-7f78-32c4-b1c5-e3a6310553d7\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a7147477-c4dd-3018-b921-2707d7e098ee\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"5225cc87-6a30-303c-a882-5f001cee7f0e\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"2e1eaaf1-ebb0-332c-8921-f48e15b91879\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"af8566eb-8918-3ec7-ba44-92b6a2cf8097\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"ee7fab6f-6438-394f-b1f2-3e452f8f055a\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"9f85a8c8-007c-3490-a7b7-4a0324c13307\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"5018c664-e283-30eb-932a-529d9a19b3b5\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"11ba6a26-59b4-3728-a268-6dc9929962b4\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"18a96051-91f4-3cba-af96-056ea14dfee0\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"51370692-6296-3150-8672-559fc73f964f\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"c7542447-e06e-32cb-b6db-243c23a0dbc2\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"cc400ddc-c38d-3604-8d89-cea21555719f\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"e5b9db6a-8dd8-3622-b9ce-3dc593e111d1\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"f68ebf98-ba5b-35af-b2bd-da56cc5b13be\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"1de7e7d9-9a7a-3a3f-bf4c-b4de450711f2\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"9adfae03-673d-365d-9052-f705098fa3e4\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"0e9d0119-1157-35a0-8bb5-7e0aa3041928\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"aba3e6f6-4562-342e-b90f-dd61b117f394\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"05fcf001-ab24-3d7d-85f7-f64942d82738\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"44cb1162-a345-3477-8723-c202a3c8cdcd\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"67cade01-dcfe-37b7-8e2c-b712d9e6fbba\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"281525ef-5743-34a8-9339-66c8b4be6668\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"901c2d40-1ca3-3879-9a20-c663b8adc0a9\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"89171335-b9c0-3326-98d6-a837d432b9fd\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"936ceb96-2b12-371f-aa68-ee02a9c06f4c\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"bdd9ad72-443a-3563-a626-4c45f6d058b2\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"f22bc2ac-f8bd-3f9f-9a40-93db37639d3f\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"05137a62-1a8f-34ff-8baf-a0c35c238ea0\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"e59fb2d5-508c-38c6-af2e-21d8216dd2b0\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"50c7f768-9138-3dae-a67d-953bdf9ad754\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"eee00932-ca82-36bc-b7e8-e3fff6dbaeaa\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"9ce6072b-d039-3cde-8eaf-950211b8ae88\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"9fdce5d5-d4d0-3156-a8d5-8757bfe4e9b3\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a2f8d8fe-665e-390f-8b9b-efdc0b14a77c\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"a4af40b8-0ddb-34bb-ae4a-95a17e9ad6f3\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"dd280187-8662-3732-af81-595d10572911\",\n    \"NumberOfPatients\": 2\n  },\n  {\n    \"Organization\": \"50c47685-8125-3c50-8311-8bd7ba9e9108\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"04b252db-4231-3cb5-963d-6f096fb4b97c\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"5862e05c-9533-3f7a-8f73-215d50f5ee2f\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1ddd51d1-7297-3c3b-bad5-98aecd5e4a79\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2bde75a8-708f-3930-8d57-100ab365d413\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c6b019eb-28ec-36f6-abf3-bcc4d1d58966\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"8ec2ca51-abb4-35dd-b90f-6c6aad6d2124\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"65450d34-6d61-3601-b325-9d471587b016\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0519b293-2e92-3eb3-aeef-233da0babc93\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"75846b1f-d0ec-3255-9bdd-d09eb0a9dd0d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"609ec9f1-e806-3427-b912-9e3b2915521d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"14036728-b721-3e4b-8755-8ee8ab6ed15e\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"fd938c9f-a355-3ec7-96f8-516240ea1ba2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"63cb4d95-04a9-3a35-b5d9-f89e0377a48d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"edd58f69-ad5f-346b-b1f9-530ccdc895f6\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"e98ef46c-e94c-34bc-9cf5-134d8ddcbac5\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"accb8cdd-6560-3fef-b0a6-f12c3295026a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"93552c27-f173-385f-8849-ee56c25f638b\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"981338c4-287c-3621-bc45-8b0b9f1b8922\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b5b380d2-df21-3389-abf0-08551c7e1f2d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4956f573-3dc2-3a67-9692-2f57451744e6\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"34f7bdc0-0550-333e-a53f-5e2af5a6d4ec\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"36d328a2-68bb-3967-a9bf-00897a7c945f\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"42c13743-f36f-370a-a5ca-3e3c9795e02d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"a6964d47-8af0-3df2-b99d-d8414eb1cfa3\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"de29a374-221b-3cb4-8051-a02c1a35e5b7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7b5bf0fc-c5c0-3f22-980b-fdfff326a9b4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"18061fd5-fda8-3e2d-87f0-0f3c87211bcc\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"db28cc9a-fdfb-35a6-aef7-ab9b933ef244\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ac0fde88-b0ad-3388-a4a8-b8fc2a4f4af2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"9656a864-3b93-356f-9fa6-d7988e249977\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2fc3d86d-4194-3ad1-bb8a-99d5d34119a1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ae3eab22-8868-37bb-9a59-2b8bfe14bf34\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b5789b71-fc8e-3b7e-9eb2-3fc577943117\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"de3cc142-803a-3ed4-8945-75ec88a84784\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"84abfbd5-41c1-3df4-9b31-7ca93cb2309a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"d6b03647-983f-3162-af9e-b12aea026f13\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0d1570ab-371c-3898-9397-95905d8c5166\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ad82d624-72eb-3c7d-a76d-79f2668d1390\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2f67494e-f17e-3248-ba68-3ca42913cca1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"18b1bb7e-2f93-3253-a7ae-d19c13ffeaa1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"47602b5b-f4aa-3c73-aa26-2268ccf7a83c\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"3f12ebb4-e03c-3453-88d2-4fc9682383df\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"d140ed3f-2696-3e78-bd77-1c959ec4fc4d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4eddfa13-f996-3048-9bbc-541b0a29038a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0fedae9f-701f-3317-9b2f-69aea2202cdc\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0ec04450-c150-322d-b2c3-1449d672a23c\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b03b624d-c939-3688-986d-9555b8009a3b\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"bebc1dac-6c42-3225-b0ba-23278cdf2a62\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"76baa51d-0d0f-359d-a07b-7b999a43d42e\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"357e489c-304e-3495-8354-62e85b5896b5\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"f2068cee-c75c-321d-9b2c-c33535db89c9\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"966245ce-e84d-36b0-a838-2e0b5bb2e668\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"e7b77e8f-b607-3273-aef9-ad1bca48813f\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4887dc20-9ef6-3cc2-9c56-858388049a50\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"94dda4e1-7476-367a-b1f8-37ea7f61a1b7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"71f4c23f-7559-31ff-8f42-a672e80b85a2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7345a4c0-52c6-3da2-8aef-fccb8ad3e8c4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4ba48ef6-19f2-3177-bfaf-096daaebf26a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"db106514-f254-3402-b6a4-6d210c78c7e2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b8d40f5c-9e4d-3639-89ef-8bf375cb3184\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"25431f9a-00e4-36d8-9810-4125328eec50\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"67d2f85b-ddc7-3ed0-b90b-6fa5b7b8358a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"cdc87240-38e9-36f8-959b-706642e01e11\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"3e97ce4f-3ad7-3cea-883f-e2bb4ca89d83\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"17a4bae5-8b64-34d7-8144-b428be027bd0\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"a6fb79e7-4abb-3a68-b62d-e501427fdca4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"52ecddd8-42f6-35cc-88a5-cf474c02fb49\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"3a9bf5ed-e584-3532-98a0-1e3a1f909db2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"6aae7a31-90df-3455-ad8d-81f8cf2d21e8\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b8e724d5-b999-3029-8a2d-ad30fbd0b9ce\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"794b1cc2-97be-30a4-83a0-4bf6add43c74\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2936ca90-6594-357d-be14-53fe0ab84dd1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7b9a19b2-d900-3f93-a47b-4b88491fb57b\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"52efa2e5-007f-3396-a83a-28ca015f0595\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"46375470-1e20-3ddc-8dc5-010ba53826b6\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"62b55e5b-b58f-354d-8f2d-f2a330bc619e\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"70e943de-a18b-3e03-a204-ecca2f01b6d1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"e0cc7e8e-e1a4-3a02-b589-0a35741d39fe\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ea8d287f-b3a9-3800-8798-788e334ee406\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"de32e6d9-848e-35d4-a217-e62eb5e0bc7b\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1484fc69-2eb0-3bba-8656-d5ead4973895\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"e34d8448-8b98-3f91-9fe7-faeb8a78e1db\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b44955d1-f0e2-3beb-a013-708a81dbe430\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0334ad53-5d57-384e-a411-63b075139c06\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1ab2b5f9-cb95-3236-beec-9b9d4a407c61\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1d87bbfa-19aa-3128-adca-420ff8d5a12a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"5b0cd0a0-f277-3a66-bee6-d64b5be4a3f5\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0cc04ba5-137a-3ef8-acda-e79b25960b2a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c92cc255-6778-3307-8092-987d667be4ce\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"9f368e75-397f-3d77-a317-9a005512a4e2\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1e3ca321-fbbb-3546-b9ea-c3761a20324a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1bed5229-19d7-3168-94a2-f1f2abb00270\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4b7c1695-a178-3e03-8651-51acfd3b8372\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"8d5880eb-1dd8-31ea-b7c5-21709f3bb341\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"fbd4ccdf-2fdb-3652-9bbe-1ccff886bd34\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"922d1031-d968-39c2-b73c-d5a495c39068\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7a75decf-7d3f-3b0d-8c2b-3abf0a8c7f58\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"6e290541-eba3-37fc-a3e2-e58f77e84c7e\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1311c44a-85cb-3aea-a143-e5d7892ced8b\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"03c5769d-b185-35ee-b563-9e651cff95bc\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"01bb7b5c-f850-3c4e-a3f1-442d8273559a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b8421363-9807-3b16-a146-95336eea5cfb\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"32fcdfba-8c93-30f4-b15b-dd3b65c29deb\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ea153d0a-9ccc-3769-9a25-934b417071b7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7f32dd7d-5c35-3ddb-839b-8fbbb930d412\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"06988693-a9d8-392b-a2ce-a07de8a931ad\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"1c42af32-f17e-32ec-b007-4ff8e2de493e\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c9aabcbd-d4e0-391f-8980-d0be6934ea82\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"7489f6e0-fee6-3fff-90b6-444868eb907c\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"e09d4c49-c2ef-3b0f-9a46-3719d9219306\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"6c7fe370-02c4-3537-8f5e-373b2168b933\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"70a26106-6797-39f8-83e6-6bcf212b99ad\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"390a2aa4-70b4-3a64-a12f-9bd777834c8d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ab074997-79db-3114-b6ac-5c21cda8ee3a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"6e517750-a29e-3170-a02b-5733ff523458\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"01bde980-bf89-3138-8912-7360dff33247\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ee6705d5-db4a-3120-bbe1-1e72972a841f\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c05d73d0-b348-32ce-9fe5-13a720950f37\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"84d5768f-3a21-3da9-aad2-bbf7a3ae2700\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"95f6c328-96dd-3fb8-a56e-9aad566094b4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"126b88f5-592a-3099-a433-c8b933f96d04\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"24460683-f514-37ef-98c1-724b2fc9aa2a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2f4e1b5e-e2ad-3081-80f5-4521124e9d28\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"5581e43d-0463-3a0b-afc7-a60aea5ac96c\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"a977feef-f585-3fa8-8deb-7e60fc2cab30\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"68027854-a51a-324b-8f20-2da7be608ebf\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"15e26ce3-9006-3ce2-9327-493180a15ec1\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"2ca615f3-87f7-3283-a447-d919a883b676\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4ff3563e-f909-3a06-902d-26c28d9d5355\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"bf556284-7513-3620-a10e-5393183a9a87\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"ce9c1582-994d-32bf-835c-474a249d2804\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"06376cbe-4880-384b-b459-7ce3eef36ced\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4fa643ae-1f58-3c2e-9f33-0ba56345ad10\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"4ffc4e4b-9d8d-3c30-ad84-fc9a7209da94\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0e3a24c3-b772-3059-b3fd-8a4710068a82\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"afc661fd-71d9-3fc3-adf2-3fc3b5e8a140\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"19a65317-5d32-355e-8f82-88933d48366d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"542185c1-943a-30f4-aba0-0efaa92488a4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"02c936e2-3aee-38b2-88a4-81f3689b7bb7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"121b0ad1-1beb-3caa-9271-3d3f726bb727\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c272e12f-e154-3fee-b05d-b7c0cab2657d\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"9ba25035-53e5-344b-9b9e-94331a58d1d4\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"c1986c0c-f756-3596-8f90-08adacf220fe\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"b5e6f1bd-c744-3556-9775-5ff8399eea33\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"69cb2157-b620-3c51-9c94-f516462d2d55\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"47fb5a56-bee5-3ecd-9958-706b20831c82\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"93c3d861-e05d-33b9-91eb-1768470229d7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"6dafa732-cdaa-37ab-a33c-b14878e841d7\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"a3327df4-d092-350b-b551-e60c82076c9a\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"667b46fe-0afa-3f70-a311-bbe3d52db050\",\n    \"NumberOfPatients\": 1\n  },\n  {\n    \"Organization\": \"0d7fd824-1c7b-3f8b-a662-f6c2005e82e1\",\n    \"NumberOfPatients\": 1\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 656
+          }
+        }
+      },
+      "latency_s": 4.89,
+      "error": null
+    },
+    {
+      "id": "eval_010",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "Which patients have had an HbA1c (glycated haemoglobin) observation recorded?",
+      "answer": "I couldn't find any patients with an HbA1c observation recorded in the database. It's possible that this specific observation hasn't been documented in the graph.",
+      "contexts": [],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 0.5,
+          "details": {
+            "expected": [
+              "HbA1c",
+              "Haemoglobin A1c"
+            ],
+            "found": [
+              "HbA1c"
+            ],
+            "missing": [
+              "Haemoglobin A1c"
+            ],
+            "total": 2
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 162
+          }
+        }
+      },
+      "latency_s": 2.256,
+      "error": null
+    },
+    {
+      "id": "eval_011",
+      "category": "population_query",
+      "difficulty": "easy",
+      "question": "What are all the distinct medication names currently in the database?",
+      "answer": "Here are some of the distinct medication names currently in the database:\n\n1. Medication Code: 313782\n2. Medication Code: 562251\n3. Medication Code: 1535362\n4. Medication Code: 1534809\n5. Medication Code: 757594\n6. Medication Code: 141918\n7. Medication Code: 1870230\n8. Medication Code: 206905\n9. Medication Code: 748856\n10. Medication Code: 978950\n\nThese are just a few examples, and there are many more medications listed in the database. If you need more specific information or additional medication names, please let me know!",
+      "contexts": [
+        "[\n  {\n    \"medicationName\": \"313782\"\n  },\n  {\n    \"medicationName\": \"562251\"\n  },\n  {\n    \"medicationName\": \"1535362\"\n  },\n  {\n    \"medicationName\": \"1534809\"\n  },\n  {\n    \"medicationName\": \"757594\"\n  },\n  {\n    \"medicationName\": \"141918\"\n  },\n  {\n    \"medicationName\": \"1870230\"\n  },\n  {\n    \"medicationName\": \"206905\"\n  },\n  {\n    \"medicationName\": \"748856\"\n  },\n  {\n    \"medicationName\": \"978950\"\n  },\n  {\n    \"medicationName\": \"849574\"\n  },\n  {\n    \"medicationName\": \"748879\"\n  },\n  {\n    \"medicationName\": \"1000126\"\n  },\n  {\n    \"medicationName\": \"314231\"\n  },\n  {\n    \"medicationName\": \"309362\"\n  },\n  {\n    \"medicationName\": \"312961\"\n  },\n  {\n    \"medicationName\": \"866412\"\n  },\n  {\n    \"medicationName\": \"705129\"\n  },\n  {\n    \"medicationName\": \"308192\"\n  },\n  {\n    \"medicationName\": \"313820\"\n  },\n  {\n    \"medicationName\": \"309097\"\n  },\n  {\n    \"medicationName\": \"198405\"\n  },\n  {\n    \"medicationName\": \"834061\"\n  },\n  {\n    \"medicationName\": \"749762\"\n  },\n  {\n    \"medicationName\": \"389221\"\n  },\n  {\n    \"medicationName\": \"751905\"\n  },\n  {\n    \"medicationName\": \"834102\"\n  },\n  {\n    \"medicationName\": \"1856546\"\n  },\n  {\n    \"medicationName\": \"1659131\"\n  },\n  {\n    \"medicationName\": \"1807510\"\n  },\n  {\n    \"medicationName\": \"242969\"\n  },\n  {\n    \"medicationName\": \"997488\"\n  },\n  {\n    \"medicationName\": \"1367439\"\n  },\n  {\n    \"medicationName\": \"197511\"\n  },\n  {\n    \"medicationName\": \"477045\"\n  },\n  {\n    \"medicationName\": \"1803932\"\n  },\n  {\n    \"medicationName\": \"1736776\"\n  },\n  {\n    \"medicationName\": \"106258\"\n  },\n  {\n    \"medicationName\": \"310436\"\n  },\n  {\n    \"medicationName\": \"1043400\"\n  },\n  {\n    \"medicationName\": \"996740\"\n  },\n  {\n    \"medicationName\": \"310965\"\n  },\n  {\n    \"medicationName\": \"857005\"\n  },\n  {\n    \"medicationName\": \"1049221\"\n  },\n  {\n    \"medicationName\": \"1860491\"\n  },\n  {\n    \"medicationName\": \"856987\"\n  },\n  {\n    \"medicationName\": \"243670\"\n  },\n  {\n    \"medicationName\": \"200031\"\n  },\n  {\n    \"medicationName\": \"617311\"\n  },\n  {\n    \"medicationName\": \"314077\"\n  },\n  {\n    \"medicationName\": \"855812\"\n  },\n  {\n    \"medicationName\": \"310798\"\n  },\n  {\n    \"medicationName\": \"314076\"\n  },\n  {\n    \"medicationName\": \"308136\"\n  },\n  {\n    \"medicationName\": \"308182\"\n  },\n  {\n    \"medicationName\": \"309309\"\n  },\n  {\n    \"medicationName\": \"212033\"\n  },\n  {\n    \"medicationName\": \"904419\"\n  },\n  {\n    \"medicationName\": \"1599803\"\n  },\n  {\n    \"medicationName\": \"807283\"\n  },\n  {\n    \"medicationName\": \"861467\"\n  },\n  {\n    \"medicationName\": \"1648755\"\n  },\n  {\n    \"medicationName\": \"197454\"\n  },\n  {\n    \"medicationName\": \"349094\"\n  },\n  {\n    \"medicationName\": \"630208\"\n  },\n  {\n    \"medicationName\": \"896001\"\n  },\n  {\n    \"medicationName\": \"745752\"\n  },\n  {\n    \"medicationName\": \"310325\"\n  },\n  {\n    \"medicationName\": \"1659263\"\n  },\n  {\n    \"medicationName\": \"313002\"\n  },\n  {\n    \"medicationName\": \"1740467\"\n  },\n  {\n    \"medicationName\": \"1732136\"\n  },\n  {\n    \"medicationName\": \"1659149\"\n  },\n  {\n    \"medicationName\": \"311700\"\n  },\n  {\n    \"medicationName\": \"1808217\"\n  },\n  {\n    \"medicationName\": \"1234995\"\n  },\n  {\n    \"medicationName\": \"542347\"\n  },\n  {\n    \"medicationName\": \"1729584\"\n  },\n  {\n    \"medicationName\": \"1860154\"\n  },\n  {\n    \"medicationName\": \"2001499\"\n  },\n  {\n    \"medicationName\": \"1605257\"\n  },\n  {\n    \"medicationName\": \"198039\"\n  },\n  {\n    \"medicationName\": \"1361048\"\n  },\n  {\n    \"medicationName\": \"749196\"\n  },\n  {\n    \"medicationName\": \"866924\"\n  },\n  {\n    \"medicationName\": \"198211\"\n  },\n  {\n    \"medicationName\": \"200095\"\n  },\n  {\n    \"medicationName\": \"313988\"\n  },\n  {\n    \"medicationName\": \"200033\"\n  },\n  {\n    \"medicationName\": \"979492\"\n  },\n  {\n    \"medicationName\": \"1719286\"\n  },\n  {\n    \"medicationName\": \"351137\"\n  },\n  {\n    \"medicationName\": \"1049625\"\n  },\n  {\n    \"medicationName\": \"209387\"\n  },\n  {\n    \"medicationName\": \"835603\"\n  },\n  {\n    \"medicationName\": \"1665060\"\n  },\n  {\n    \"medicationName\": \"1796676\"\n  },\n  {\n    \"medicationName\": \"1809104\"\n  },\n  {\n    \"medicationName\": \"665078\"\n  },\n  {\n    \"medicationName\": \"562366\"\n  },\n  {\n    \"medicationName\": \"108515\"\n  },\n  {\n    \"medicationName\": \"1664463\"\n  },\n  {\n    \"medicationName\": \"1431987\"\n  },\n  {\n    \"medicationName\": \"1860480\"\n  },\n  {\n    \"medicationName\": \"752899\"\n  },\n  {\n    \"medicationName\": \"748962\"\n  },\n  {\n    \"medicationName\": \"198335\"\n  },\n  {\n    \"medicationName\": \"311372\"\n  },\n  {\n    \"medicationName\": \"1049630\"\n  },\n  {\n    \"medicationName\": \"1998772\"\n  },\n  {\n    \"medicationName\": \"854252\"\n  },\n  {\n    \"medicationName\": \"2123111\"\n  },\n  {\n    \"medicationName\": \"198440\"\n  },\n  {\n    \"medicationName\": \"245314\"\n  },\n  {\n    \"medicationName\": \"1736854\"\n  },\n  {\n    \"medicationName\": \"583214\"\n  },\n  {\n    \"medicationName\": \"896209\"\n  },\n  {\n    \"medicationName\": \"966222\"\n  },\n  {\n    \"medicationName\": \"993770\"\n  },\n  {\n    \"medicationName\": \"860975\"\n  },\n  {\n    \"medicationName\": \"313521\"\n  },\n  {\n    \"medicationName\": \"311034\"\n  },\n  {\n    \"medicationName\": \"1735006\"\n  },\n  {\n    \"medicationName\": \"1804799\"\n  },\n  {\n    \"medicationName\": \"106892\"\n  },\n  {\n    \"medicationName\": \"205923\"\n  },\n  {\n    \"medicationName\": \"608139\"\n  },\n  {\n    \"medicationName\": \"198240\"\n  },\n  {\n    \"medicationName\": \"1873983\"\n  },\n  {\n    \"medicationName\": \"831533\"\n  },\n  {\n    \"medicationName\": \"859088\"\n  },\n  {\n    \"medicationName\": \"197541\"\n  },\n  {\n    \"medicationName\": \"197319\"\n  },\n  {\n    \"medicationName\": \"198014\"\n  },\n  {\n    \"medicationName\": \"197378\"\n  },\n  {\n    \"medicationName\": \"1728805\"\n  },\n  {\n    \"medicationName\": \"1116635\"\n  },\n  {\n    \"medicationName\": \"751616\"\n  },\n  {\n    \"medicationName\": \"617310\"\n  },\n  {\n    \"medicationName\": \"261962\"\n  },\n  {\n    \"medicationName\": \"749785\"\n  },\n  {\n    \"medicationName\": \"749882\"\n  },\n  {\n    \"medicationName\": \"310385\"\n  },\n  {\n    \"medicationName\": \"245134\"\n  },\n  {\n    \"medicationName\": \"854255\"\n  },\n  {\n    \"medicationName\": \"866427\"\n  },\n  {\n    \"medicationName\": \"197905\"\n  },\n  {\n    \"medicationName\": \"979468\"\n  },\n  {\n    \"medicationName\": \"1649987\"\n  },\n  {\n    \"medicationName\": \"212446\"\n  },\n  {\n    \"medicationName\": \"308971\"\n  },\n  {\n    \"medicationName\": \"1723208\"\n  },\n  {\n    \"medicationName\": \"204892\"\n  },\n  {\n    \"medicationName\": \"197591\"\n  },\n  {\n    \"medicationName\": \"895996\"\n  },\n  {\n    \"medicationName\": \"351266\"\n  }\n]"
+      ],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 1.0,
+          "details": {
+            "skipped": true
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 530
+          }
+        }
+      },
+      "latency_s": 2.867,
+      "error": null
+    },
+    {
+      "id": "eval_012",
+      "category": "population_query",
+      "difficulty": "medium",
+      "question": "Which patients are currently prescribed Metformin and for what reason?",
+      "answer": "",
+      "contexts": [],
+      "tool_names": [],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "Metformin"
+            ],
+            "found": [],
+            "missing": [
+              "Metformin"
+            ],
+            "total": 1
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "860975"
+            ],
+            "found": [],
+            "missing": [
+              "860975"
+            ],
+            "total": 1
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 0
+          }
+        }
+      },
+      "latency_s": 3.438,
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-qtFfVlyW5BXmuaWSHm5xkbOy on tokens per min (TPM): Limit 30000, Used 30000, Requested 827. Please try again in 1.654s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "id": "eval_030",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "question": "For patients diagnosed with type 2 diabetes, what are the three most common co-occurring conditions (comorbidities)?",
+      "answer": "I couldn't retrieve the information about the most common co-occurring conditions for patients diagnosed with type 2 diabetes from the graph. There might be an issue with the query or the data might not be available.",
+      "contexts": [],
+      "tool_names": [
+        "text_to_cypher"
+      ],
+      "ragas_scores": {},
+      "custom_scores": {
+        "entity_recall": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "Hypertension",
+              "Hyperlipidemia",
+              "Obesity"
+            ],
+            "found": [],
+            "missing": [
+              "Hypertension",
+              "Hyperlipidemia",
+              "Obesity"
+            ],
+            "total": 3
+          }
+        },
+        "clinical_code_accuracy": {
+          "score": 0.0,
+          "details": {
+            "expected": [
+              "44054006"
+            ],
+            "found": [],
+            "missing": [
+              "44054006"
+            ],
+            "total": 1
+          }
+        },
+        "refusal_flag": {
+          "score": 0.0,
+          "details": {
+            "refused": false,
+            "response_length": 216
+          }
+        }
+      },
+      "latency_s": 9.259,
+      "error": null
+    }
+  ]
+}

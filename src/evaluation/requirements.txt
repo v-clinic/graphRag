@@ -1,0 +1,29 @@
+# Evaluation-specific dependencies for VClinic GraphRAG
+# Install with: pip install -r src/evaluation/requirements.txt
+
+# ── Primary RAG evaluation framework ─────────────────────────────────────────
+# RAGAS provides LLM-as-judge metrics for RAG pipelines:
+#   faithfulness, answer_relevancy, context_precision, context_recall
+ragas>=0.2.0,<0.3.0
+
+# Required by RAGAS for dataset handling
+datasets>=2.14.0
+
+# ── Alternative / complementary evaluation libraries ──────────────────────────
+#
+# DeepEval — comprehensive LLM evaluation with medical-friendly metrics
+#   Includes: GEval, Hallucination, Answer Relevancy, Contextual Precision,
+#             Contextual Recall, Toxicity, Bias, and custom G-Eval metrics.
+#   Well-suited for medical use cases because it supports custom criteria.
+#   Reference: https://docs.confident-ai.com
+#
+# Uncomment to enable DeepEval:
+# deepeval>=0.21.0
+#
+# ARES — specialised RAG evaluation with automated dataset generation
+#   Reference: https://github.com/stanford-futuredata/ARES
+# ares-ai>=1.0.0
+#
+# TruLens — RAG triad (answer relevance, context relevance, groundedness)
+#   Reference: https://www.trulens.org
+# trulens-eval>=0.28.0
