@@ -20,7 +20,7 @@ console = Console()
 
 # Default location of the Synthea-format CSV export.
 # Override at call time: build_graph("/path/to/other/data")
-DEFAULT_DATA_DIR = Path("/Users/yunwen/work/test_data/vclinic")
+DEFAULT_DATA_DIR = Path("test_data/vclinic")
 
 
 def build_graph(data_dir: str | Path = DEFAULT_DATA_DIR) -> None:

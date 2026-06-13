@@ -18,7 +18,7 @@ console = Console()
 @app.command()
 def build(
     data_dir: str = typer.Option(
-        "/Users/yunwen/work/test_data/vclinic",
+        "test_data/vclinic",
         "--data-dir", "-d",
         help="Path to the folder containing VClinic CSV files.",
     )

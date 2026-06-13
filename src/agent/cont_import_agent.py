@@ -54,7 +54,7 @@ log = logging.getLogger(__name__)
 
 # ── Defaults ──────────────────────────────────────────────────────────────────
 
-NEW_DATA_DIR = Path("/Users/yunwen/work/test_data/vclinic/new_data")
+NEW_DATA_DIR = Path("test_data/vclinic/new_data")
 
 # Hidden state file written inside the watch directory.
 # Schema: { filename: { "row_count": int, "imported_at": iso-timestamp } }
