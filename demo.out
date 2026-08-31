@@ -1,0 +1,118 @@
+(graphRag) yunwen@yunwens-mbp graphRag % python app.py chat
+╭───────────────────────────────────────────────────────────────────────────╮
+│ VClinic GraphRAG Agent                                                    │
+│ Ask clinical questions about patients, conditions, medications, and more. │
+│ Type exit or quit to stop.                                                │
+╰───────────────────────────────────────────────────────────────────────────╯
+
+You: get clinic or doctor visits for patient Foster87
+
+Agent: Here are the clinic or doctor visits for patient Foster87 Cartwright189:
+
+1. **Emergency Encounter**
+   - **Date:** 2008-04-24 to 2008-05-02
+   - **Description:** Encounter for problem (procedure)
+   - **Reason:** Sepsis (disorder)
+   - **Cost:** $2994.86
+   - **Provider:** Marth98 Mayer370
+   - **Speciality:** General Practice
+   - **Organization:** Baystate Franklin Medical Center
+
+2. **Ambulatory Encounter**
+   - **Date:** 2006-06-07
+   - **Description:** Encounter for check up (procedure)
+   - **Reason:** Patient referral for dental care (procedure)
+   - **Cost:** $4399.55
+   - **Provider:** Marth98 Mayer370
+   - **Speciality:** General Practice
+   - **Organization:** Baystate Franklin Medical Center
+
+3. **Wellness Encounter**
+   - **Date:** 2006-05-24
+   - **Description:** General examination of patient (procedure)
+   - **Cost:** $1567.00
+   - **Provider:** Amos720 Bogan287
+   - **Speciality:** General Practice
+   - **Organization:** Connecticut River Internists, LLP
+
+4. **Ambulatory Encounter**
+   - **Date:** 2003-06-04
+   - **Description:** Encounter for check up (procedure)
+   - **Reason:** Gingivitis (disorder)
+   - **Cost:** $3536.75
+   - **Provider:** Marth98 Mayer370
+   - **Speciality:** General Practice
+   - **Organization:** Baystate Franklin Medical Center
+
+5. **Wellness Encounter**
+   - **Date:** 2003-05-21
+   - **Description:** General examination of patient (procedure)
+   - **Cost:** $1050.78
+   - **Provider:** Amos720 Bogan287
+   - **Speciality:** General Practice
+   - **Organization:** Connecticut River Internists, LLP
+
+6. **Wellness Encounter**
+   - **Date:** 2000-05-17
+   - **Description:** General examination of patient (procedure)
+   - **Cost:** $704.20
+   - **Provider:** Amos720 Bogan287
+   - **Speciality:** General Practice
+   - **Organization:** Connecticut River Internists, LLP
+
+7. **Wellness Encounter**
+   - **Date:** 1999-05-12
+   - **Description:** General examination of patient (procedure)
+   - **Cost:** $1377.83
+   - **Provider:** Amos720 Bogan287
+   - **Speciality:** General Practice
+   - **Organization:** Connecticut River Internists, LLP
+
+8. **Ambulatory Encounter**
+   - **Date:** 1998-05-20
+   - **Description:** Encounter for check up (procedure)
+   - **Reason:** Gingivitis (disorder)
+   - **Cost:** $3105.35
+   - **Provider:** Marth98 Mayer370
+   - **Speciality:** General Practice
+   - **Organization:** Baystate Franklin Medical Center
+
+9. **Wellness Encounter**
+   - **Date:** 1998-05-06
+   - **Description:** Well child visit (procedure)
+   - **Cost:** $704.20
+   - **Provider:** Amos720 Bogan287
+   - **Speciality:** General Practice
+   - **Organization:** Connecticut River Internists, LLP
+
+10. **Ambulatory Encounter**
+    - **Date:** 1992-01-11
+    - **Description:** Encounter for symptom (procedure)
+    - **Reason:** Acute bacterial sinusitis (disorder)
+    - **Cost:** $92.93
+    - **Provider:** Marth98 Mayer370
+    - **Speciality:** General Practice
+    - **Organization:** Baystate Franklin Medical Center
+
+These encounters cover a range of reasons from general check-ups to specific conditions like sepsis and gingivitis.
+
+You: what diseases does Foster87 have?
+
+Agent: Foster87 has been diagnosed with the following conditions:
+
+1. **Chronic sinusitis (disorder)** - Code: 40055000, diagnosed on 1992-01-11.
+2. **Gingivitis (disorder)** - Code: 66383009, diagnosed on 1998-05-06 and again on 2003-05-21.
+3. **Gingival disease (disorder)** - Code: 18718003, diagnosed on 2006-06-07.
+4. **Sepsis (disorder)** - Code: 91302008, diagnosed on 2008-04-24.
+
+Additionally, there are findings and situations recorded such as:
+- **Medication review due (situation)** - Code: 314529007, noted multiple times.
+- **Only received primary school education (finding)** - Code: 224295006.
+- **Full-time employment (finding)** - Code: 160903007.
+- **Reports of violence in the environment (finding)** - Code: 424393004.
+- **Stress (finding)** - Code: 73595000.
+- **Has a criminal record (finding)** - Code: 266948004.
+- **Victim of intimate partner abuse (finding)** - Code: 706893006.
+- **Limited social contact (finding)** - Code: 423315002.
+
+You: 

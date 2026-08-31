@@ -40,9 +40,10 @@ def chat():
         expand=False,
     ))
 
+    import readline  # enables up-arrow history on macOS/Linux
     while True:
         try:
-            question = console.input("\n[bold green]You:[/bold green] ").strip()
+            question = input("\nYou: ").strip()
         except (EOFError, KeyboardInterrupt):
             console.print("\n[dim]Goodbye.[/dim]")
             break
